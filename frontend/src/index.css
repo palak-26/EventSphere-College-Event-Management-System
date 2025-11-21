@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root{
+  --bg-1: #0f172a;      /* deep background */
+  --brand-1: #2f5bd0;   /* main blue */
+  --brand-2: #3355cc;
+  --muted: #6b7280;
+  --card: #ffffff;
+  --glass: rgba(255,255,255,0.06);
+}
+
+/* page bg */
+html,body,#root { height:100%; }
+body{
+  font-family: Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  background: #0b1220;
+  color: #071033;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* surface card */
+.surface {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 30px rgba(11,20,40,0.08);
+}
+
+/* compact small cards used in KPI */
+.kpi {
+  font-weight: 700;
+  color: #0b2a66;
+}
+
+/* subtle text */
+.subtle{ color: var(--muted); }
+
+/* primary button */
+.btn-primary{
+  background: linear-gradient(180deg,var(--brand-1),var(--brand-2));
+  color: white;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 600;
+  display:inline-flex;
+  align-items:center;
+  justify-content: center;
+  gap:8px;
+}
+
+/* sidebar look */
+.app-sidebar {
+  background: linear-gradient(180deg,#092133 0%, #0f2336 100%);
+  min-height: calc(100vh - 32px);
+  border-radius: 12px;
+  padding: 18px;
+  color: white;
+}
+
+/* small stat tile */
+.stat-tile {
+  border-radius: 12px;
+  padding: 12px;
+  background: linear-gradient(180deg,#ffffff 0%, #f8fafc 100%);
+  box-shadow: 0 6px 20px rgba(11,20,40,0.06);
+}
+.hero-floating-effect {
+  animation: floatHero 4s ease-in-out infinite alternate;
+}
+
+@keyframes floatHero {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-16px); }
+}
+.input { width:100%; padding:0.75rem; border-radius:0.5rem; border:1px solid #e5e7eb; }
