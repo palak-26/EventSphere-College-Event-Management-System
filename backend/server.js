@@ -12,7 +12,6 @@
     connectDB();
 
     const allowedOrigins = [
-  "http://localhost:5173",
   "https://eventsphere-hu6d.onrender.com"
 ];
 
