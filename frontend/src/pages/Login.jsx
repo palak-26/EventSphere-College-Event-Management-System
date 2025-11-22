@@ -20,7 +20,7 @@ export default function Login() {
     if (!role) return setError("Please select your role.");
     
     try {
-      const { data } = await API.post("/api/auth/login", { ...form, role });
+      const { data } = await API.post("/auth/login", { ...form, role });
 
       localStorage.setItem("token", data.token);
       setUser(data.user);
