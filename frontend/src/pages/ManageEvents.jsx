@@ -131,7 +131,7 @@ export default function ManageEvents() {
                     <img
                       src={
                         ev.banner
-                          ? `${import.meta.env.VITE_API_URL.ev.banner}`
+                          ? `https://eventsphere-backend-yok4.onrender.com/auth${ev.banner}`
                           : "/default-event.jpg"
                       }
                       className="h-10 w-10 md:h-12 md:w-12 rounded-md border object-cover"
