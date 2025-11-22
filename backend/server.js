@@ -2,7 +2,7 @@
     const express = require('express');
     const cors = require('cors');
     const connectDB = require('./config/db');
-    const authRoutes = require('./routes/auth');
+    const authRoutes = require('./routes/auth.js');
     const userRoutes = require('./routes/users');
     const eventRoutes = require('./routes/events');          
     const adminEventsRoute = require("./routes/adminEvents");
