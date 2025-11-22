@@ -124,7 +124,7 @@ export default function ManageEvents() {
               {filtered.map((ev) => (
                 <tr
                   key={ev._id}
-                  className="border-b hover:bg-gray-50 transition"
+                  className="border-b flex items-center hover:bg-gray-50 transition"
                 >
                   {/* Event Name */}
                   <td className="p-3 md:p-4 flex items-center gap-3">
