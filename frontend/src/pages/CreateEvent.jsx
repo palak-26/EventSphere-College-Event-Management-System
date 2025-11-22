@@ -131,7 +131,7 @@ export default function CreateEvent() {
           type="file"
           accept="image/*"
           onChange={(e) => setImage(e.target.files[0])}
-          className="border border-gray-300 rounded-lg p-2 w-full bg-gray-50 hover:bg-gray-100"
+          className="border border-gray-300 text-black rounded-lg p-2 w-full bg-gray-50 hover:bg-gray-100"
         />
       </div>
 
