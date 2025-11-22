@@ -121,6 +121,7 @@ export default function Register() {
                 <option value="admin">Admin</option>
               </select>
             </div>
+            
 
             {/* Submit */}
             <button
