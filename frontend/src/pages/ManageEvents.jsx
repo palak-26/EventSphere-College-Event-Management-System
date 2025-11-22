@@ -131,7 +131,7 @@ export default function ManageEvents() {
                     <img
                       src={
                         ev.banner
-                          ? `http://localhost:5000${ev.banner}`
+                          ? `${import.meta.env.VITE_API_URL.ev.banner}`
                           : "/default-event.jpg"
                       }
                       className="h-10 w-10 md:h-12 md:w-12 rounded-md border object-cover"
