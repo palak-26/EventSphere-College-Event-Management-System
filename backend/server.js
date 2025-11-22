@@ -44,5 +44,5 @@ app.use(cors({
 
     app.get('/', (req,res)=>res.send('EventSphere API'));
 
-    const PORT = process.env.PORT || 5173;
+    const PORT = process.env.PORT ;
     app.listen(PORT, ()=> console.log(`Server running on port ${PORT}`));
