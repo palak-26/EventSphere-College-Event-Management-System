@@ -87,7 +87,7 @@ export default function ClubDashboard() {
                   >
                     {/* Event Banner */}
                     <img
-                      src={`http://localhost:5000${ev.banner}`}
+                      src={`https://eventsphere-backend-yok4.onrender.com/api${ev.banner}`}
                       className="w-full sm:w-32 h-40 sm:h-24 object-cover rounded-lg"
                       alt="event-banner"
                     />

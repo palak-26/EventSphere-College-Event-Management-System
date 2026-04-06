@@ -27,7 +27,7 @@ export default function EventGallery(){
                         
                         {/* Event Banner */}
                         <img
-                          src={`http://localhost:5000${ev.banner}`}
+                          src={`https://eventsphere-backend-yok4.onrender.com/api${ev.banner}`}
                           className="w-72 h-48 object-cover"
                           alt="event-banner"
                         />

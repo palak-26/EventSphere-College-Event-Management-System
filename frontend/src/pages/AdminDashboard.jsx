@@ -45,7 +45,7 @@ export default function AdminDashboard(){
                   
                   {/* Event Banner */}
                   <img
-                    src={`http://localhost:5000${ev.banner}`}
+                    src={`https://eventsphere-backend-yok4.onrender.com/api${ev.banner}`}
                     className="w-28 h-20 object-cover rounded"
                     alt="event-banner"
                   />

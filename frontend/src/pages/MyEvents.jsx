@@ -19,7 +19,7 @@ export default function MyEvents() {
           {events.map((ev) => (
             <div key={ev._id} className="surface p-4 rounded-xl">
               <img
-                src={`http://localhost:5000${ev.banner}`}
+                src={`https://eventsphere-backend-yok4.onrender.com/api${ev.banner}`}
                 className="w-full h-40 rounded-xl object-cover"
                 alt=""
               />

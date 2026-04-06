@@ -26,7 +26,7 @@ export default function EventDetails() {
         {/* Banner */}
         <div className="w-full h-64 rounded-xl overflow-hidden shadow-lg">
           <img
-            src={`http://localhost:5000${event.banner}`}
+            src={`https://eventsphere-backend-yok4.onrender.com/api${event.banner}`}
             alt="banner"
             className="w-full h-full object-cover"
           />

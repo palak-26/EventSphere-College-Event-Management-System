@@ -87,7 +87,7 @@ export default function StudentDashboard() {
 
               <div className="bg-white rounded-2xl p-4 text-center shadow-lg">
                 <p className="text-gray-800 font-semibold">Certificates</p>
-                <p className="mt-2 text-3xl font-bold kpi">1</p>
+                <p className="mt-2 text-3xl font-bold kpi">0</p>
               </div>
             </div>
 
@@ -113,7 +113,7 @@ export default function StudentDashboard() {
                     >
                       {/* Image */}
                       <img
-                        src={`http://localhost:5000${ev.banner}`}
+                        src={`https://eventsphere-backend-yok4.onrender.com/api${ev.banner}`}
                         className="w-full sm:w-32 h-24 object-cover rounded-lg"
                       />
 
