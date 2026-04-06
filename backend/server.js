@@ -12,7 +12,8 @@
     connectDB();
 
     const allowedOrigins = [
-  "https://eventsphere-hu6d.onrender.com"
+  "https://eventsphere-hu6d.onrender.com",
+  "http://localhost:5173"
 ];
 
 app.use(cors({
