@@ -28,6 +28,9 @@ export default function Sidebar() {
             <Link to="/clubs/pending" className="flex items-center p-2 rounded-md gap-3 hover:bg-blue-800 transition">
               <FiUsers className="text-xl" /> Club Approvals
             </Link>
+            <Link to="/community-chats" className="flex items-center p-2 rounded-md gap-3 hover:bg-blue-800 transition">
+              <FiAward className="text-xl" /> Community Chats
+            </Link>
             <Link to="/leaderboard" className="flex items-center p-2 rounded-md gap-3 hover:bg-blue-800 transition">
               <FiAward className="text-xl" /> Leaderboard
             </Link>
@@ -49,11 +52,11 @@ export default function Sidebar() {
             <Link to="/club/volunteers" className="flex items-center p-2 rounded-md gap-3 hover:bg-blue-800 transition">
               <FiUsers className="text-xl" /> Volunteers
             </Link>
+            <Link to="/community-chats" className="flex items-center p-2 rounded-md gap-3 hover:bg-blue-800 transition">
+              <FiAward className="text-xl" /> Community Chats
+            </Link>
             <Link to="/leaderboard" className="flex items-center p-2 rounded-md gap-3 hover:bg-blue-800 transition">
               <FiAward className="text-xl" /> Leaderboard
-            </Link>
-            <Link to="/analytics" className="flex items-center p-2 rounded-md gap-3 hover:bg-blue-800 transition">
-              <FiAward className="text-xl" /> AI Analytics
             </Link>
              <Link to="/gallery" className="flex items-center p-2 rounded-md gap-3 hover:bg-blue-800 transition">
               <FiImage className="text-xl" /> Events Gallery
@@ -79,8 +82,11 @@ export default function Sidebar() {
              <Link to="/my-events" label="My Events" className="flex items-center p-2 rounded-md gap-3 hover:bg-blue-800 transition"> 
               <MdEventAvailable className="text-xl" />My Events
              </Link>
+             <Link to="/community-chats" className="flex items-center p-2 rounded-md gap-3 hover:bg-blue-800 transition">
+              <FiAward className="text-xl" /> Community Chats
+            </Link>
              <Link to="/suggestions" label="suggestions" className="flex items-center p-2 rounded-md gap-3 hover:bg-blue-800 transition"> 
-             💡 Suggestions
+              Suggestions
              </Link>
              <Link to="/leaderboard" className="flex items-center p-2 rounded-md gap-3 hover:bg-blue-800 transition">
               <FiAward className="text-xl" /> Leaderboard

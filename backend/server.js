@@ -7,6 +7,7 @@
     const eventRoutes = require('./routes/events');          
     const adminEventsRoute = require("./routes/adminEvents");
     const certificateRoutes = require('./routes/certificates');
+    const path  = require('path');
 
     const app = express();
     connectDB();
@@ -27,8 +28,9 @@ app.use(cors({
   credentials: true
 }));
     app.use(express.json());
+
     // static uploads first
-    app.use("/uploads", express.static("uploads"));
+    app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
     // routes
     app.use("/api/auth", authRoutes);

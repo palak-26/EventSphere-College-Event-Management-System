@@ -49,21 +49,28 @@ export default function EditEvent() {
              <div>
             <label htmlFor="number" className="font-bold">Capacity</label>
             <input type="number" name="capacity" value={form.capacity || ""} onChange={onChange} className="input" placeholder="Capacity" />
-             </div>
-             <div>
-  <label className="font-bold">Status</label>
-  <select
-    name="status"
-    value={form.status || ""}
-    onChange={onChange}
-    className="input bg-[#0d1026]/50"
-  >
-    <option value="pending">Pending</option>
-    <option value="approved">Approved</option>
-    <option value="completed">Completed</option>
-  </select>
-</div>
-
+            </div>
+            <div>
+            <label className="font-bold">Status</label>
+              <select
+                 name="status"
+                 value={form.status || ""}
+                 onChange={onChange}
+                 className="input bg-[#0d1026]/50"
+              >
+                  <option value="approved">Approved</option>
+                  <option value="completed">Completed</option>
+              </select>
+            </div>
+            <div className="space-y-2">
+              <label className="text-gray-700 font-semibold">Event Banner</label>
+              <input
+              type="file"
+              accept="image/*"
+              onChange={(e) => setImage(e.target.files[0])}
+              className="border border-gray-300 text-black rounded-lg p-2 w-full bg-gray-50 hover:bg-gray-100"
+              />
+            </div>
           </div>
           <label htmlFor="venue" className="font-bold">Venue</label>
           <input name="venue" value={form.venue || ""} onChange={onChange} className="input" />
