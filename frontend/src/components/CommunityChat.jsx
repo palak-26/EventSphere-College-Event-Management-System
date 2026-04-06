@@ -12,7 +12,7 @@ export default function CommunityChat() {
 
   const clubs = ["Dance Club", "Sports Club", "Literature Club"];
 
-  // JOIN ROOM + FETCH MESSAGES
+  
   useEffect(() => {
     socket.emit("joinRoom", selectedClub);
 
@@ -48,7 +48,7 @@ export default function CommunityChat() {
     <div className="flex w-full h-full gap-4">
 
       {/* LEFT */}
-      <div className="w-[20%] bg-white text-black rounded-2xl p-4">
+      <div className="w-[40%] bg-white text-black rounded-2xl p-4">
         <h3 className="font-semibold mb-4">Communities</h3>
 
         {clubs.map((c, i) => (
@@ -65,7 +65,7 @@ export default function CommunityChat() {
       </div>
 
       {/* CHAT */}
-      <div className="flex-1 bg-white rounded-2xl flex flex-col">
+      <div className="flex w-[80%] bg-white rounded-2xl flex flex-col">
 
         {/* HEADER */}
         <div className="p-4 border-b font-semibold text-black">
@@ -80,13 +80,15 @@ export default function CommunityChat() {
               className={`max-w-[60%] px-3 py-2 rounded-lg ${
                 msg.sender._id === user._id
                   ? "ml-auto bg-blue-500 text-white"
-                  : "bg-gray-200"
+                  : "bg-gray-600"
               }`}
             >
-              <div className="text-xs font-semibold">
+              <div className="text-s  font-bold">
                 {msg.sender.name}
               </div>
-              {msg.message}
+              <div className="text-s font-semibold">
+                {msg.message}
+              </div>
             </div>
           ))}
         </div>

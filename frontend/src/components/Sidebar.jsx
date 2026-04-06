@@ -30,7 +30,7 @@ export default function Sidebar() {
               <FiUsers className="text-xl" /> Club Approvals
             </Link>
             <Link to="/community-chats" className="flex items-center p-2 rounded-md gap-3 hover:bg-blue-800 transition">
-              <FiAward className="text-xl" /> Community Chats
+              <FiFeather className="text-xl" /> Community Chats
             </Link>
             <Link to="/leaderboard" className="flex items-center p-2 rounded-md gap-3 hover:bg-blue-800 transition">
               <FiAward className="text-xl" /> Leaderboard
@@ -54,7 +54,7 @@ export default function Sidebar() {
               <FiUsers className="text-xl" /> Volunteers
             </Link>
             <Link to="/community-chats" className="flex items-center p-2 rounded-md gap-3 hover:bg-blue-800 transition">
-              <FiAward className="text-xl" /> Community Chats
+              <FiFeather className="text-xl" /> Community Chats
             </Link>
             <Link to="/leaderboard" className="flex items-center p-2 rounded-md gap-3 hover:bg-blue-800 transition">
               <FiAward className="text-xl" /> Leaderboard
