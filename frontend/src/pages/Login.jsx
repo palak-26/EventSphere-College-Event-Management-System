@@ -83,6 +83,7 @@ export default function Login() {
 
             <input
               type="email"
+              name="email"
               placeholder="Email address"
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
@@ -92,6 +93,7 @@ export default function Login() {
 
             <input
               type="password"
+              name="password"
               placeholder="Password"
               value={form.password}
               onChange={(e) => setForm({ ...form, password: e.target.value })}
