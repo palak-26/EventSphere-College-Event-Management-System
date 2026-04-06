@@ -15,9 +15,15 @@ export default function Register() {
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
-
+  const isValidCollegeEmail = (email) => {
+  return email.endsWith("@global.org.in");
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!isValidCollegeEmail(form.email)) {
+    setError("Please use your college email (@global.org.in)");
+    return;
+    }
     try {
       await API.post("/auth/register", form);
       alert("Account created successfully!");

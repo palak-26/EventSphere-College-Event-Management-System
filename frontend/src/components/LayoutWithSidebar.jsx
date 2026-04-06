@@ -38,7 +38,7 @@ export default function LayoutWithSidebar({ children }) {
       <div className="md:hidden">
         <div
         className={`
-          fixed top-0 left-0 h-full w-72 shadow-xl z-50 
+          fixed top-0 left-0 h-full w-[100%] shadow-xl z-50 
           transform transition-transform duration-300 
           md:relative md:translate-x-0 md:hidden md:flex md:block
           ${open ? "translate-x-0" : "-translate-x-full"}

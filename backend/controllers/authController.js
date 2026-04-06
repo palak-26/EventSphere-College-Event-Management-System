@@ -2,6 +2,9 @@ const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
+const isValidCollegeEmail = (email) => {
+  return /^[a-zA-Z0-9._%+-]+@global\.org\.in$/.test(email);
+};
 // =========================
 // AUTH MIDDLEWARE
 // =========================
@@ -22,12 +25,20 @@ exports.authMiddleware = (req, res, next) => {
   }
 };
 
+
 // =========================
 // REGISTER
 // =========================
 exports.register = async (req, res) => {
   try {
     const { name, email, password, role } = req.body;
+
+    // ✅ EMAIL VALIDATION
+    if (!isValidCollegeEmail(email)) {
+      return res.status(400).json({
+        message: "Only college email (@global.org.in) is allowed",
+      });
+    }
 
     const exists = await User.findOne({ email });
     if (exists)
@@ -38,20 +49,20 @@ exports.register = async (req, res) => {
     const user = new User({
       name,
       email,
-      passwordHash: hashedPassword,   
-      role
+      passwordHash: hashedPassword,
+      role,
     });
 
     await user.save();
 
-    res.json({ 
-      message: "Registered successfully", 
+    res.json({
+      message: "Registered successfully",
       user: {
         _id: user._id,
         name: user.name,
         email: user.email,
-        role: user.role
-      }
+        role: user.role,
+      },
     });
 
   } catch (err) {
@@ -67,15 +78,21 @@ exports.login = async (req, res) => {
   try {
     const { email, password, role } = req.body;
 
+    // ✅ EMAIL VALIDATION
+    if (!isValidCollegeEmail(email)) {
+      return res.status(400).json({
+        message: "Use your college email (@global.org.in)",
+      });
+    }
+
     const user = await User.findOne({ email });
     if (!user)
       return res.status(400).json({ message: "Invalid credentials" });
 
-    const isMatch = await bcrypt.compare(password, user.passwordHash); 
+    const isMatch = await bcrypt.compare(password, user.passwordHash);
     if (!isMatch)
       return res.status(400).json({ message: "Invalid credentials" });
 
-    // Role must match
     if (user.role != role) {
       return res.status(403).json({
         message: `Invalid role selected. You are registered as "${user.role}".`,
@@ -99,11 +116,10 @@ exports.login = async (req, res) => {
     });
 
   } catch (err) {
-    console.error("LOGIN ERROR:", err); 
+    console.error("LOGIN ERROR:", err);
     res.status(500).json({ message: err.message });
   }
 };
-
 // =========================
 // User
 // =========================

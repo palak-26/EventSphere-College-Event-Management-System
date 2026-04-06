@@ -23,7 +23,7 @@ import MyEvents from './pages/MyEvents';
 import Suggestions from './pages/Suggestions';
 import EditEvent from './pages/EditEvent';
 import About from './pages/About';
-
+import CommunityChats from './pages/CommunityChat';
 
 export default function App(){
   return (
@@ -84,7 +84,7 @@ export default function App(){
     <EventDetails/>
   </ProtectedRoute>
 }/>
-
+<Route path="/community-chats" element={<ProtectedRoute roles={["admin","student","club"]}><CommunityChats/></ProtectedRoute>}/>
 <Route path="/event/:id/register" element={
   <ProtectedRoute roles={["student"]}>
     <EventRegister/>

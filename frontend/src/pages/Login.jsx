@@ -12,9 +12,15 @@ export default function Login() {
   const [role, setRole] = useState("");
   const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
-
+  const isValidCollegeEmail = (email) => {
+  return email.endsWith("@global.org.in");
+  };
   const handleLogin = async (e) => {
     e.preventDefault();
+    if (!isValidCollegeEmail(form.email)) {
+    setError("Please use your college email (@global.org.in)");
+    return;
+    }
     setError("");
 
     if (!role) return setError("Please select your role.");

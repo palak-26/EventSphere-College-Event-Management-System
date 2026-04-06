@@ -1,6 +1,6 @@
 import React from 'react';
 import LayoutWithSidebar from '../components/LayoutWithSidebar';
-import Card from '../components/EventCard';
+// import Card from '../components/EventCard';
 import { useState, useEffect } from 'react';
 import API from '../utils/api';
 import { Link } from 'react-router-dom';

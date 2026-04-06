@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import { FiHome, FiUsers, FiCalendar, FiAward, FiImage, FiFlag, FiMeh, FiLogOut } from "react-icons/fi";
+import { FiHome, FiUsers, FiCalendar, FiAward, FiImage, FiFlag, FiMeh, FiLogOut, FiFeather } from "react-icons/fi";
 import { MdEventAvailable } from "react-icons/md";
+import CommunityChat from "../components/CommunityChat";
 
 export default function Sidebar() {
   const { user } = useAuth();
@@ -83,11 +84,11 @@ export default function Sidebar() {
               <MdEventAvailable className="text-xl" />My Events
              </Link>
              <Link to="/community-chats" className="flex items-center p-2 rounded-md gap-3 hover:bg-blue-800 transition">
-              <FiAward className="text-xl" /> Community Chats
+              <FiFeather className="text-xl" /> Community Chats
             </Link>
-             <Link to="/suggestions" label="suggestions" className="flex items-center p-2 rounded-md gap-3 hover:bg-blue-800 transition"> 
+             {/* <Link to="/suggestions" label="suggestions" className="flex items-center p-2 rounded-md gap-3 hover:bg-blue-800 transition"> 
               Suggestions
-             </Link>
+             </Link> */}
              <Link to="/leaderboard" className="flex items-center p-2 rounded-md gap-3 hover:bg-blue-800 transition">
               <FiAward className="text-xl" /> Leaderboard
             </Link>
