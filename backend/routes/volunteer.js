@@ -37,11 +37,18 @@ router.post("/apply", authMiddleware, async (req, res) => {
 // =====================
 router.get("/club", authMiddleware, async (req, res) => {
   try {
-    const requests = await Volunteer.find({ club: req.user.id })
-      .populate("student", "name email")
-      .populate("event", "title");
+    const requests = await Volunteer.find()
+      .populate({
+        path: "event",
+        match: { createdBy: req.user.id },
+        select: "title"
+      })
+      .populate("student", "name");
 
-    res.json(requests);
+    // remove null events
+    const filtered = requests.filter(r => r.event);
+
+    res.json(filtered);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

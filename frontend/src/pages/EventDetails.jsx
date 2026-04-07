@@ -65,7 +65,7 @@ export default function EventDetails() {
                   try {
                   await API.post("/volunteer/apply", {
                   eventId: event._id,
-                  clubId: event.createdBy, // 👈 IMPORTANT
+                  clubId: event.createdBy, 
                   });
 
                   alert("Request sent. Pending approval.");
@@ -73,7 +73,7 @@ export default function EventDetails() {
                   alert(err.response?.data?.message || "Error");
                   }
               }}
-              className="bg-purple-600 text-white px-4 py-2 rounded"
+              className="btn-primary px-6 py-3 rounded-lg ml-8"
               >
               Apply as Volunteer
               </button>

@@ -50,7 +50,7 @@ export default function Sidebar() {
             <Link to="/club/manage-events" className="flex items-center p-2 rounded-md gap-3 hover:bg-blue-800 transition">
               <FiCalendar className="text-xl" /> Manage Events
             </Link>
-            <Link to="/club/volunteers" className="flex items-center p-2 rounded-md gap-3 hover:bg-blue-800 transition">
+            <Link to="/volunteer/club" className="flex items-center p-2 rounded-md gap-3 hover:bg-blue-800 transition">
               <FiUsers className="text-xl" /> Volunteers
             </Link>
             <Link to="/community-chats" className="flex items-center p-2 rounded-md gap-3 hover:bg-blue-800 transition">

@@ -149,18 +149,24 @@ export default function StudentDashboard() {
             </div>
             {/* Volunteer Requests*/}
             <div className="bg-white p-4 rounded">
-              <h3 className="font-bold">My Volunteer Requests</h3>
+              <h3 className="font-bold text-black">My Volunteer Requests</h3>
 
                 {volunteers.map(v => (
-                 <div key={v._id} className="mt-2">
-                  <p>{v.event.title}</p>
+                 <div key={v._id} className="mt-2 text-black ">
+                  <div className="mt-2 text-black flex justify-around font-bold">
+                    <h3>Event Name</h3>
+                    <h3>Status</h3>
+                  </div>
+                  <div className="mt-2 text-black flex justify-around">
+                    <p>{v.event.title}</p>
                   <p className={
                   v.status === "approved" ? "text-green-600" :
                   v.status === "rejected" ? "text-red-600" :
-                "text-yellow-500"
+                  "text-pink-300"
                 }>
                 {v.status}
                 </p>
+                  </div>
                 </div>
                 ))}
               </div>

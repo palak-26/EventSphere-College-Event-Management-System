@@ -70,7 +70,7 @@ export default function App(){
 {/* Club */}
 <Route path="/create-event" element={<ProtectedRoute roles={["club"]}><CreateEvent/></ProtectedRoute>} />
 <Route path="/club/manage-events" element={<ProtectedRoute roles={["club"]}><ClubManageEvents/></ProtectedRoute>} />
-<Route path="/club/volunteers" element={<ProtectedRoute roles={["club"]}><VolunteerManagement/></ProtectedRoute>} />
+<Route path="/volunteer/club" element={<ProtectedRoute roles={["club"]}><VolunteerManagement/></ProtectedRoute>} />
 <Route path="/club/leaderboard" element={<ProtectedRoute roles={["club"]}><Leaderboard/></ProtectedRoute>} />
 <Route path="/club/analytics" element={<ProtectedRoute roles={["club"]}><AIAnalytics/></ProtectedRoute>} />
 
