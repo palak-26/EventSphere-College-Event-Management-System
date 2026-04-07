@@ -60,7 +60,25 @@ export default function EventDetails() {
             >
               Register
             </Link>
+            <button
+              onClick={async () => {
+                  try {
+                  await API.post("/volunteer/apply", {
+                  eventId: event._id,
+                  clubId: event.createdBy, // 👈 IMPORTANT
+                  });
+
+                  alert("Request sent. Pending approval.");
+                  } catch (err) {
+                  alert(err.response?.data?.message || "Error");
+                  }
+              }}
+              className="bg-purple-600 text-white px-4 py-2 rounded"
+              >
+              Apply as Volunteer
+              </button>
           </div>
+          
         )}
       </div>
     </LayoutWithSidebar>

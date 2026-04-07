@@ -8,6 +8,12 @@ import { useAuth } from "../contexts/AuthContext";
 export default function StudentDashboard() {
   const { user } = useAuth();  
   const [recentEvents, setRecentEvents] = useState([]);
+  const [volunteers, setVolunteers] = useState([]);
+
+  useEffect(() => {
+    API.get("/volunteer/:id")
+    .then(res => setVolunteers(res.data));
+  }, []);
 
   useEffect(() => {
     API.get("/events/public/approved")
@@ -137,11 +143,27 @@ export default function StudentDashboard() {
                       </div>
                     </div>
                   ))
+                  
                 )}
               </div>
             </div>
+            {/* Volunteer Requests*/}
+            <div className="bg-white p-4 rounded">
+              <h3 className="font-bold">My Volunteer Requests</h3>
 
-
+                {volunteers.map(v => (
+                 <div key={v._id} className="mt-2">
+                  <p>{v.event.title}</p>
+                  <p className={
+                  v.status === "approved" ? "text-green-600" :
+                  v.status === "rejected" ? "text-red-600" :
+                "text-yellow-500"
+                }>
+                {v.status}
+                </p>
+                </div>
+                ))}
+              </div>
 
             {/* FOOTER CARDS */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

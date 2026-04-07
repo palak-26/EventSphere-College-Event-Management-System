@@ -112,6 +112,7 @@ app.use("/api/certificates", certificateRoutes);
 app.use("/api/clubs", require("./routes/clubs"));
 app.use("/api/leaderboard", require("./routes/leaderboard"));
 app.use("/api/chat", chatRoutes);
+app.use("/api/volunteer", require("./routes/volunteer"));
 
 // ----------------------
 app.get("/", (req, res) => res.send("EventSphere API"));
