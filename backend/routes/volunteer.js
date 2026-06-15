@@ -44,8 +44,7 @@ router.get("/club", authMiddleware, async (req, res) => {
         select: "title"
       })
       .populate("student", "name");
-
-    // remove null events
+        
     const filtered = requests.filter(r => r.event);
 
     res.json(filtered);

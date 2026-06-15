@@ -112,7 +112,7 @@ export default function ManageEvents() {
               </tr>
             </thead>
 
-            <tbody>
+            <tbody className="w-full">
               {filtered.length === 0 && (
                 <tr>
                   <td colSpan="5" className="text-center p-6 text-gray-500">
@@ -124,10 +124,10 @@ export default function ManageEvents() {
               {filtered.map((ev) => (
                 <tr
                   key={ev._id}
-                  className="border-b flex items-center hover:bg-gray-50 transition"
+                  className=" border-b  hover:bg-gray-50 transition "
                 >
                   {/* Event Name */}
-                  <td className="p-3 md:p-4 flex items-center gap-3">
+                  <td className="p-3 md:p-4 flex items-center gap-3 ">
                     <img
                       src={
                         ev.banner
@@ -175,7 +175,7 @@ export default function ManageEvents() {
                   </td>
 
                   {/* Actions */}
-                  <td className="p-3 md:p-4 flex gap-3 text-gray-600">
+                  <td className="p-3 flex  items-center  md:p-4 flex gap-3 text-gray-600">
                     {/* View */}
                     <Link
                       to={`/events/${ev._id}`}

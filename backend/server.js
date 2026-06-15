@@ -79,6 +79,7 @@ io.on("connection", (socket) => {
 const allowedOrigins = [
   "https://eventsphere-hu6d.onrender.com",
   "http://localhost:5173",
+  "http://localhost:5000"
 ];
 
 app.use(
@@ -120,7 +121,7 @@ app.get("/", (req, res) => res.send("EventSphere API"));
 // ----------------------
 // START SERVER (IMPORTANT CHANGE)
 // ----------------------
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 
 server.listen(PORT, () =>
   console.log(`🚀 Server + Socket running on port ${PORT}`)

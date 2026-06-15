@@ -3,7 +3,7 @@ const router = express.Router();
 const Message = require("../models/Message");
 const { authMiddleware } = require("../controllers/authController");
 
-// ✅ GET messages by club
+
 router.get("/:club", authMiddleware, async (req, res) => {
   try {
     const club = decodeURIComponent(req.params.club);

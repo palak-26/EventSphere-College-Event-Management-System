@@ -30,6 +30,7 @@ exports.authMiddleware = (req, res, next) => {
 // REGISTER
 // =========================
 exports.register = async (req, res) => {
+  console.log("REGISTER CALLED WITH:", req.body);
   try {
     const { name, email, password, role } = req.body;
 
@@ -75,6 +76,7 @@ exports.register = async (req, res) => {
 // LOGIN
 // =========================
 exports.login = async (req, res) => {
+  console.log("LOGIN CALLED WITH:", req.body);
   try {
     const { email, password, role } = req.body;
 

@@ -12,6 +12,7 @@ export default function Register() {
     password: "",
     role: "student",
   });
+  
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -20,6 +21,8 @@ export default function Register() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("Clicked");
+
     if (!isValidCollegeEmail(form.email)) {
     setError("Please use your college email (@global.org.in)");
     return;
@@ -131,6 +134,7 @@ export default function Register() {
 
             {/* Submit */}
             <button
+              onClick={handleSubmit}
               type="submit"
               className="w-full bg-blue-600 text-white py-2 rounded-xl font-semibold shadow-md hover:bg-blue-700 transition"
             >

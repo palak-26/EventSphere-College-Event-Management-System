@@ -6,6 +6,7 @@ const { authMiddleware } = require("../controllers/authController");
 const requireRole = require("../middleware/roleAuth");
 const Club = require("../models/Club");
 const User = require("../models/User");
+const Volunteer = require("./Volunteer");
 
 /* -------------------------------------------------------
    CREATE CLUB (Club registration)
@@ -171,6 +172,29 @@ router.delete("/:id", authMiddleware, requireRole("admin"), async (req, res) => 
   } catch (err) {
     console.error("Delete Club Error:", err);
     res.status(500).json({ msg: "Error deleting club" });
+  }
+});
+
+// ==============================
+// GET VOLUNTEER REQUESTS FOR CLUB
+// ==============================
+router.get("/club", authMiddleware, async (req, res) => {
+  try {
+    const requests = await Volunteer.find()
+      .populate({
+        path: "event",
+        match: { createdBy: req.user.id }, 
+        select: "title"
+      })
+      .populate("student", "name");
+
+    // remove requests not belonging to this club
+    const filtered = requests.filter(r => r.event);
+
+    res.json(filtered);
+  } catch (err) {
+    console.error("VOLUNTEER FETCH ERROR:", err);
+    res.status(500).json({ message: err.message });
   }
 });
 
